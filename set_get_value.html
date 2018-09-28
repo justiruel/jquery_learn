@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#getEditText").click(function (e) { 
+                    e.preventDefault(); //https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_preventdefault
+                    alert($("#edittext").val());
+                });
+
+                $("#editEditText").click(function (e) { 
+                    e.preventDefault();
+                    $("#edittext").val("aloha");
+
+                });
+                
+
+                $("#select").change(function (e) { 
+                    e.preventDefault();
+                    console.log('value',$('#select option:selected').val());
+                    console.log('label',$('#select option:selected').text());
+                });
+
+                $("#replaceSelect").click(function (e) { 
+                    e.preventDefault();
+                    var array = ["Mobil","Motor","Sepeda"];
+                    $("select").html('');
+                    array.forEach(function(item,index){
+                        $("select").append("<option value='"+(index+1)+"'>"+item+"</option>");
+                    });
+                });
+                
+                $("#removeSelected").click(function (e) { 
+                    e.preventDefault();
+                    //$("select option[value='option1']").remove();
+                    var dropdownval = $("select").val();
+                    $('select').find('option[value="' + dropdownval + '"]').remove(); //find digunakan untuk menemukan element/tag
+                });
+
+                $("#editSelected").click(function (e) { 
+                    e.preventDefault();
+                    var dropdownval = $("select").val();
+                    $('select').find('option[value="' + dropdownval + '"]').text("coba");
+                    $('select').find('option[value="' + dropdownval + '"]').val("99");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="text" id="edittext" value="hello"/><button id="getEditText">get edit text</button><button id="editEditText">edit text</button><br/>
+        <select>
+            <option value="1">Indonesia</option>
+            <option value="2">Malaysia</option>
+            <option value="3">Brunei Darussalam</option>
+        </select>    
+        <button id="replaceSelect">replace select</button>
+        <button id="removeSelected">remove selected</button>
+        <button id="editSelected">edit selected</button>
+    </body>
+</html>
+
+

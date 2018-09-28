@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#button").click(function (e) { 
+        e.preventDefault();
+        $("div").remove(".target");
+    });
+});
+</script>
+</head>
+<body>
+    <div class="target">
+        hello
+    </div>
+    <button id="button">remove tag</button>
+</body>
+</html>

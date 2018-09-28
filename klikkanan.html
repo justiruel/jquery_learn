@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    var targetnya = document.getElementById("target"); 
+    $(targetnya).contextmenu(function() {
+        alert( "Handler for .contextmenu() called." );
+    });
+
+   // Cara Lain (hasilnya sama saja) : 
+   /*  $("#target").bind( "contextmenu", function() {
+        alert( "User clicked on 'foo.'" );
+    });  */    
+});
+</script>
+</head>
+<body>
+    <div id="target">
+        Right-click here
+    </div>
+</body>
+</html>

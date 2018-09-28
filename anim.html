@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var zoom = false;
+        $( "#clickhere" ).click(function() {
+            if(zoom){
+                $( "#book" ).animate({
+                width: "100px", //70%
+                //opacity: 0.4,
+                //marginLeft: "0.6in",
+                //fontSize: "3em",
+                //borderWidth: "10px"
+                }, 1500 );
+            }else{
+                $( "#book" ).animate({
+                width: "500px", //70%
+                //opacity: 0.4,
+                //marginLeft: "0.6in",
+                //fontSize: "3em",
+                //borderWidth: "10px"
+                }, 1500 );
+            }
+            zoom = !zoom;
+        });   
+
+
+        $( "#book" ).mouseover(function() {
+            $("#book").stop(); //Stop the currently-running animation on the matched elements. (#book)
+            $("#book").animate({
+                width: "500px"
+                }, 500 );
+        })
+        .mouseout(function() {
+            $("#book").stop();
+            $( "#book" ).animate({
+                width: "100px"
+                }, 500 );
+        });
+
+  
+    });
+</script>
+</head>
+<body>
+    <div id="clickhere">
+        Click here
+    </div>
+    <img id="book" src="book.jpg" alt="" width="100"/>
+
+</body>
+</html>

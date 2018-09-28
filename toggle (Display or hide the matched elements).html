@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $( "#clickhere" ).click(function() {
+            $( "#book" ).toggle( "slow", function() {
+                // Animation complete.
+            });
+        });   
+    });
+</script>
+</head>
+<body>
+    <div id="clickhere">
+        Click here
+    </div>
+    <img id="book" src="book.jpg" alt=""/>
+
+</body>
+</html>
